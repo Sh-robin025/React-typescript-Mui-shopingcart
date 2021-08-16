@@ -5,7 +5,12 @@
     "node": true,
     "jest": true
   },
-  "extends": ["plugin:react/recommended", "airbnb", "prettier"],
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -22,10 +27,12 @@
       }
     }
   },
-  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "plugins": ["react", "@typescript-eslint"],
   "rules": {
+    "arrow-body-style": ["error", "always"],
     "no-use-before-define": "off",
     "react/jsx-filename-extension": [2, { "extensions": [".ts", ".tsx"] }],
+    "linebreak-style": 0,
     "prettier/prettier": [
       "error",
       {
