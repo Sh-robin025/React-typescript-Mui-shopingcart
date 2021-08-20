@@ -5,5 +5,6 @@
     "source.fixAll.eslint": true
   },
   "editor.mouseWheelZoom": true,
-  "prettier.printWidth": 100
+  "prettier.printWidth": 100,
+  "prettier.arrowParens": "always"
 }
