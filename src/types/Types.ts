@@ -6,8 +6,7 @@ export type Product = {
   image: string;
   price: number;
 };
-
-// export type Props = {
-//   item: Product;
-//   handleAddToCart: (clickedItem: Product) => void;
-// };
+export type Props = {
+  item: Product;
+  handleAddToCart: (clickedItem: Product) => void;
+};

@@ -7,32 +7,24 @@ import {
   CardContent,
   CardMedia,
   Grid,
-  makeStyles,
   Typography,
 } from "@material-ui/core";
-import { Product } from "../../types/Types";
+// eslint-disable-next-line import/no-unresolved
+import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
+import { Props } from "../../types/Types";
+import { cardStyles } from "../../styles/product.card";
 
-const useStyles = makeStyles({
-  media: {
-    height: 240,
-  },
-});
-
-type Props = {
-  item: Product;
-};
-
-const ProductCard: FC<Props> = ({ item }) => {
-  const classes = useStyles();
+const ProductCard: FC<Props> = ({ item, handleAddToCart }) => {
+  const classes = cardStyles();
 
   return (
-    <Grid item md={2}>
+    <Grid item lg={3} md={4} sm={6} xs={12}>
       <Card>
         <CardActionArea>
           <CardMedia className={classes.media} image={item.image} title="Contemplative Reptile" />
           <CardContent>
             <Typography gutterBottom variant="h6">
-              {/* {item.title} */} Product Name
+              {item.title}
             </Typography>
             {/* <Typography variant="body2" color="textSecondary" component="p">
               Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
@@ -41,11 +33,13 @@ const ProductCard: FC<Props> = ({ item }) => {
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button size="small" color="primary">
-            Share
-          </Button>
-          <Button size="small" color="primary">
-            Learn More
+          <Button
+            size="medium"
+            variant="contained"
+            color="primary"
+            onClick={() => handleAddToCart(item)}
+          >
+            <AddShoppingCartIcon /> Add to Cart
           </Button>
         </CardActions>
       </Card>

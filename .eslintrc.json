@@ -25,6 +25,7 @@
   "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
     // "generator-star-spacing": "off",
+    "no-unused-vars": "warn",
     "react/prop-types": "off",
     "react/button-has-type": "off",
     "import/prefer-default-export": "off",
